@@ -1,0 +1,27 @@
+#!/bin/bash
+
+
+secret_number=$((RANDOM % 100 + 1))
+
+
+echo "Találd ki, hogy melyik számra gondoltam!"
+echo "1 és 100 között találgathatsz"
+
+while true; do
+  
+  read guess
+
+  if ! [[ "$guess" =~ ^[0-9]+$ ]]; then
+    echo "ez nem egy szám >:("
+    continue
+  fi
+
+  if [ "$guess" -eq "$secret_number" ]; then
+    echo "Ügyes vagy, kitaláltad a számot amire gondoltam"
+    break
+  elif [ "$guess" -lt "$secret_number" ]; then
+    echo "Túl alacsony, próbáld újra"
+  else
+    echo "Túl magas, bróbáld újra"
+  fi
+done

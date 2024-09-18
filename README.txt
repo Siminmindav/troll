@@ -31,3 +31,5 @@ still nothing
 
 
 bye! :)
+
+by the way találd ki file is unrelated
